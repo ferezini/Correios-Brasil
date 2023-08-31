@@ -11,7 +11,7 @@ const minutes = String(currentDate.getMinutes()).padStart(2, '0');
 const seconds = String(currentDate.getSeconds()).padStart(2, '0');
 
 // Token Constante da requisição de PROXYAPP_RASTREAR
-const REQUEST_TOKEN = "rPgi596V7vNHkEJwJA0eW30hUeJNqvKcHVdhfcX3CDuNCFu3KT5XgkbDf2iFc/g7nuGbFx4bNOBUEieF0k+jICMcWRN+ug0asYGwMM511vBzfbLotGy6IR5Ya0jUjx+N/EAhJM3jjxYUudPZLWIdwoL/B23mPvbQEXAyWcEAxHS7JUOgC9p/Zj/RHXtF9W3iK1TfRdk1CjNP5UmwUdGWwawgvfPY7Fof9nPrHMz/MkeYn0/PSemHHhJ3TdHCFc0h/MrWDSjsTtznZbpQcZZL4rAes9vOoN8SWJgyLmK21qXeErdB1OljK/VYbBvTfTzEcoOWM3/4Z3jGPyxM+a77Mg=="
+const REQUEST_TOKEN = "Aru8f+R6u00wQgU0nZ7AZg0vpvXTfB+e7w00jf+OkHbgQDwHUpVvhdIzf7BdYSGxQdwlcefRusOvAkLpMFXFwA0ujoHrN82I2hxVumUQELmCEbu47jqa916P2mmIcmMC4rMwY8ihFAnOjnrEdLaLnRceOdxzwcIsGKEeXpJ6S0mVYHP/t6eU9EsOGRxJTEf4jl6oEEMwgfqf7nSkuy+NX/CTvNz0jm1aMsz4NkAqjtaMegE/K2pMTBGLt3CD01gHhylz1bKjNUUmgUhFlBNDD40qBPvUS+sVtt29GJTJj5n+S9ny5BpUE2fkHwwKub7Oz0ummldKEVGx0zYq1KP86w=="
 // 'YW5kcm9pZDtici5jb20uY29ycmVpb3MucHJlYXRlbmRpbWVudG87RjMyRTI5OTc2NzA5MzU5ODU5RTBCOTdGNkY4QTQ4M0I5Qjk1MzU3ODs1LjEuMTQ=';
 // const REQUEST_DATA = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 // const REQUEST_SIGN = crypto
