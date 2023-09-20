@@ -9,7 +9,7 @@ const year = String(currentDate.getFullYear());
 const hours = String(currentDate.getHours()).padStart(2, '0');
 const minutes = String(currentDate.getMinutes()).padStart(2, '0');
 const seconds = String(currentDate.getSeconds()).padStart(2, '0');
-
+const apiUrl = "https://correios-auth-token.andersu.dev/?token=c0176e07417ef5760ed391de0cfb7e00";
 // Token Constante da requisição de PROXYAPP_RASTREAR
 let REQUEST_TOKEN = "nqPQAT8dqe7YUpC55cenPeaOCojb/foQo35WejFe7vhr6+ihgUDNyUaw+f4AJOdQOhEFGAoyEItV2EwX7BrsVUMhn4fZhsF+SLAs1yydsTQ+7HAs97ovPFpBs8N2JONtyICKoh45iXIQ5ShqatPWC29lDqxjJdjOTknuhn8etR2VYj8Ja2OhpNF6jRw776+qLF5mfWFhP6XaL3TuwPubjEMV94dNcjPRGToY+A9E4yhZKFFQytxfWGHZgSjxJO7ymppbifndDF+rmsQCJvfP75j4akLWHzWmt38ZtUMovcJrK1bQQWDiqMufVdEoYdVoX1HKv2ZPpTqyOh/yfi4d/Q=="
 // 'YW5kcm9pZDtici5jb20uY29ycmVpb3MucHJlYXRlbmRpbWVudG87RjMyRTI5OTc2NzA5MzU5ODU5RTBCOTdGNkY4QTQ4M0I5Qjk1MzU3ODs1LjEuMTQ=';
@@ -23,6 +23,36 @@ let REQUEST_TOKEN = "nqPQAT8dqe7YUpC55cenPeaOCojb/foQo35WejFe7vhr6+ihgUDNyUaw+f4
 let tokenValue: string = null;
 let tokenExpiration: number = 0;
 let tokenPromise: Promise<string> = null;
+
+
+// URL da API que retorna o token
+
+
+function getToken() {
+  return fetch(apiUrl)
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error("Erro ao obter o token da API");
+      }
+      return response.text();
+    })
+    .then(function(token) {
+      REQUEST_TOKEN = token;
+      console.log("Token atribuído com sucesso:", REQUEST_TOKEN);
+    })
+    .catch(function(error) {
+      console.error("Erro:", error);
+    });
+}
+
+// Chamando a função para obter o token
+getToken();
+
+
+
+
+
+
 
 function rastrearEncomendas(codes: Array<string>): Promise<any> {
   /**
