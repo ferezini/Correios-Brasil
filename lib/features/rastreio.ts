@@ -34,11 +34,15 @@ function getToken() {
       if (!response.ok) {
         throw new Error("Erro ao obter o token da API");
       }
-      return response.text();
+      return response.json(); // Parse a resposta JSON
     })
-    .then(function(token) {
-      REQUEST_TOKEN = token;
-      console.log("Token atribuído com sucesso:", REQUEST_TOKEN);
+    .then(function(data) {
+      if (data && data.token) {
+        REQUEST_TOKEN = data.token;
+        console.log("Token atribuído com sucesso:", REQUEST_TOKEN);
+      } else {
+        throw new Error("Token não encontrado na resposta da API");
+      }
     })
     .catch(function(error) {
       console.error("Erro:", error);
